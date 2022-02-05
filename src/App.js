@@ -1,16 +1,16 @@
-import { useEffect, useState, useRef } from 'react'
-import { letters, status } from './constants'
+import { useEffect, useRef, useState } from 'react'
+import { EndGameModal } from './components/EndGameModal'
+import { InfoModal } from './components/InfoModal'
 import { Keyboard } from './components/Keyboard'
+import { SettingsModal } from './components/SettingsModal'
+import { letters, status } from './constants'
 import answers from './data/answers'
-import words from './data/words'
-
-import { useLocalStorage } from './hooks/useLocalStorage'
 import { ReactComponent as Info } from './data/Info.svg'
 import { ReactComponent as Settings } from './data/Settings.svg'
+import words from './data/words'
+import { useLocalStorage } from './hooks/useLocalStorage'
 
-import { InfoModal } from './components/InfoModal'
-import { SettingsModal } from './components/SettingsModal'
-import { EndGameModal } from './components/EndGameModal'
+
 
 const state = {
   playing: 'playing',
@@ -98,9 +98,8 @@ function App() {
   const getCellStyles = (rowNumber, colNumber, letter) => {
     if (rowNumber === currentRow) {
       if (letter) {
-        return `nm-inset-background dark:nm-inset-background-dark text-primary dark:text-primary-dark ${
-          submittedInvalidWord ? 'border border-red-800' : ''
-        }`
+        return `nm-inset-background dark:nm-inset-background-dark text-primary dark:text-primary-dark ${submittedInvalidWord ? 'border border-red-800' : ''
+          }`
       }
       return 'nm-flat-background dark:nm-flat-background-dark text-primary dark:text-primary-dark'
     }
@@ -253,11 +252,10 @@ function App() {
       height: 'calc(100% - 2rem)',
       width: 'calc(100% - 2rem)',
       backgroundColor: darkMode ? 'hsl(231, 16%, 25%)' : 'hsl(231, 16%, 92%)',
-      boxShadow: `${
-        darkMode
+      boxShadow: `${darkMode
           ? '0.2em 0.2em calc(0.2em * 2) #252834, calc(0.2em * -1) calc(0.2em * -1) calc(0.2em * 2) #43475C'
           : '0.2em 0.2em calc(0.2em * 2) #A3A7BD, calc(0.2em * -1) calc(0.2em * -1) calc(0.2em * 2) #FFFFFF'
-      }`,
+        }`,
       border: 'none',
       borderRadius: '1rem',
       maxWidth: '475px',
@@ -322,6 +320,7 @@ function App() {
           currentStreak={currentStreak}
           longestStreak={longestStreak}
           answer={answer}
+          answerBoard={cellStatuses}
           playAgain={() => {
             setAnswer(initialStates.answer)
             setGameState(initialStates.gameState)
