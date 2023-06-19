@@ -52,3 +52,6 @@ To contribute to the code, see [CONTRIBUTING.md](https://github.com/dspinellis/w
 
 The [Wordles of the world](https://rwmpelstilzchen.gitlab.io/wordles/) list
 contains a comprehensive collection of Wordle-like games in diverse languages.
+You can also [play](https://dspinellis.github.io/word-master-ancient-greek/)
+or [browse the source code](https://github.com/dspinellis/word-master-ancient-greek) of a
+version I created using the vocabulary of Ancient Greek.
